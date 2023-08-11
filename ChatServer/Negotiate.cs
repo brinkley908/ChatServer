@@ -10,7 +10,7 @@ namespace ChatServer
     {
         [Microsoft.Azure.WebJobs.FunctionName("negotiate")]
         public static SignalRConnectionInfo Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "negotiate")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "negotiate")] HttpRequest req,
             [SignalRConnectionInfo(HubName = "simplechat")] SignalRConnectionInfo connectionInfo,
             ILogger log)
         {

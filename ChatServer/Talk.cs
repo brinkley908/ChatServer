@@ -16,7 +16,7 @@ namespace ChatServer
     {
 
         [FunctionName("talk")]
-        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post", Route = "talk")] HttpRequest req,
+        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "talk")] HttpRequest req,
             [SignalR(HubName = "simplechat")] IAsyncCollector<SignalRMessage> questionR,
             ILogger log)
         {
